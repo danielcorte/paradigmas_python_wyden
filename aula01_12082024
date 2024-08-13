@@ -1,0 +1,65 @@
+# Variáveis em Python
+mensagem = 'Exemplo de mesnsagem!'
+
+"""n = 25 
+pi = 3.141592653589931
+print(mensagem)
+print(n)
+print(pi)
+
+m = '\nMensagem'
+print(m)
+m = 25
+print(m)
+m = 3.14
+print(m)"""
+
+
+# Condições em Python
+"""print("---Acesso ao sistema---")
+login = input("Digite seu usuário: ")
+key = input("Digite sua senha: ")
+print("Bem vindo", login)
+print("A sua senha é:", key)
+while True:
+  print("-" * 30)
+  key1 = input("Confirme a sua senha: ")
+  if key1 == key:
+    print("Senha confirmada!\n")
+    break
+  else:
+    print("Senha incorreta!\n")
+num1 = int(input("\nDigite o 1° Valor: "))
+num2 = int(input("Digite o 2° Valor: "))
+print(f"A soma de {num1} + {num2} = {num1+num2}")
+"""
+
+
+
+""" num01 = float(input("Digie a primeira nota: "))
+num02 = float(input("Digite a segunda nota: "))
+media = (num01 + num02) / 2
+if media >= 7:
+  print("Aprovado")
+elif media >= 5:
+  print("Recuperação")
+else:
+  print("Reprovado")"""
+
+num01 = float(input("Digie a primeira nota: "))
+num02 = float(input("Digite a segunda nota: "))
+media = (num01 + num02) / 2
+novamedia = 0
+if media >= 7:
+  print("Aprovado")
+elif media >= 5:
+  print("Recuperação")
+  num03 = float(input("Digite a nota de recuperação: "))
+  if num01 > num02:
+    novamedia = (num03 + num02) / 2
+  elif num02 > num01:
+    novamedia = (num03 + num01) / 2
+  if novamedia >= 7:
+    print("Aprovado")  
+else:
+  print("Reprovado")

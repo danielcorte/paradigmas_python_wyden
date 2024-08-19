@@ -1,26 +1,43 @@
 EXERCICIO IF/ELIF
 
-  print('------------------------------\n')
-num1 = float(input("Temperatura do sensor 1: °C "))
-num2 = float(input("Temperatura do sensor 2: °C "))
-print('\n------------------------------\n')
-media = (num1 + num2) / 2
+                    print('------------------------------\n')
+                  num1 = float(input("Temperatura do sensor 1: °C "))
+                  num2 = float(input("Temperatura do sensor 2: °C "))
+                  print('\n------------------------------\n')
+                  media = (num1 + num2) / 2
+                  
+                  if media <= 0:
+                    print(f"Está muito frio: {media}°C\n")
+                    print('------------------------------')
+                  elif media <= 10:
+                    print(f"Está frio: {media}°C\n")
+                    print('------------------------------')
+                  elif media <= 20:
+                    print(f"Está agradável: {media}°C\n")
+                    print('------------------------------')
+                  elif media <= 30:
+                    print(f"Está quente: {media}°C\n")
+                    print('------------------------------')
+                  elif media <= 40:
+                    print(f"Está muito quente: {media}°C\n")
+                    print('------------------------------')
+                  else:
+                    print("EXTREMAMENTE quente / frio \n")
+                    print('------------------------------')
 
-if media <= 0:
-  print(f"Está muito frio: {media}°C\n")
-  print('------------------------------')
-elif media <= 10:
-  print(f"Está frio: {media}°C\n")
-  print('------------------------------')
-elif media <= 20:
-  print(f"Está agradável: {media}°C\n")
-  print('------------------------------')
-elif media <= 30:
-  print(f"Está quente: {media}°C\n")
-  print('------------------------------')
-elif media <= 40:
-  print(f"Está muito quente: {media}°C\n")
-  print('------------------------------')
-else:
-  print("EXTREMAMENTE quente / frio \n")
-  print('------------------------------')
+EXERCICIO FOR
+
+                  notas, media = 0, 0
+                  print('------------------------------------')
+                  num = int(input("Quantas notas deseja calcular? "))
+                  print('------------------------------------')
+                  for c in range(0, num):
+                    num1 = float(input(f"- Digite a {c+1}ª nota: "))
+                    notas += num1
+                  media = notas / num
+                  print('------------------------------------')
+                  if media > 5:
+                    print(f"Aprovado com média: {media:.2f}")
+                  else:
+                    print(f"Reprovado com média: {media:.2f}")
+                  print('------------------------------------')

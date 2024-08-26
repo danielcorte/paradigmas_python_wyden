@@ -1,0 +1,76 @@
+nome = "João da Silva"
+idade = 22
+
+print(f"O meu nome é {nome} e eu tenho {idade} anos")
+
+--------------------------------------------------------------
+
+texto = "Python é divertodo"
+
+texto_maiusculo =
+print(texto_maiusculo)
+
+texto_limpo = texto.strip();
+print(texto_limpo)
+
+texto_novo = texto.replace('divertido', 'incrivel')
+print(texto_novo)
+
+palavras = texto_limpo.split(' ')
+print(palavras)
+
+boleto = '00000.11111.22222 33333.444444 5 66666666666'
+print(boleto)
+bol1 = boleto.replace('.','')
+bol2 = bol1.replace(' ', '')
+print(bol2)
+
+--------------------------------------------------------------
+
+texto = 'Python é incrível!'
+
+primeiro_char = texto[0] 
+primeiroCaractere = f"O primeiro caractere é {primeiro_char}"
+print(primeiroCaractere) # O primeiro caractere é P
+
+substring = texto[9:17]
+print(substring) # 'incrível'
+
+--------------------------------------------------------------
+EXERCICIO:
+
+Criar um programa em python que consuma os dados de uma tabela
+e de a soma dos valores do produto.
+
+arquivo csv "
+  alimentacao,800.00
+transporte,600.00
+academia,150.00
+games,300.00
+mulher,700.00
+serv_assinatura,400.00
+chocolate,70.00
+investimentos,679.00
+ajuda_em_casa,433.00
+besteiras,345.23
+"
+
+arquivo .py {
+
+import csv
+
+total = 0
+with open('arquivo.csv', newline='') as csvfile:
+  reader = csv.reader(csvfile, delimiter=',')
+
+  # Minha solução
+  for row in reader:
+    if len(row) > 1:
+      try:
+        valor = float(row[1])
+        total += valor
+      except ValueError:
+        print(f"Valor inválido na linha {reader.line_num}: {row[1]}")
+  print(f"Total: R${total:.2f}")
+
+}

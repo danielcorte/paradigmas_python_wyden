@@ -37,3 +37,74 @@ else:
 'os' é útil para verificar a existência do arquivo e o tamanho.
 'platform' não é realmente necessário para as funções acima, mas pode ser útil se você precisar adaptar o comportamento do código com base no sistema operacional (por exemplo, verificar o tipo de sistema operacional e ajustar o caminho do arquivo).
 Se você precisar usar 'platform' para alguma adaptação específica relacionada ao sistema operacional, por favor, forneça mais detalhes sobre o que você está tentando alcançar.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+from calculator import add, subtract, multiply, divide
+
+import os
+
+import platform
+
+def clear_screen():
+  if platform.system() == "Windows":
+    os.system("cls")
+  else:
+    os.system("clear")
+
+def display_menu():
+  print("Selecione uma opção:")
+  print("1. Adição")
+  print("2. Subtração")
+  print("3. Multiplicação")
+  print("4. Divisão")
+  print("5. Finalizar/Sair")
+
+def main():
+  result = 0
+  while True:
+    clear_screen()
+    display_menu()
+    choice = input("Digite o número da opção desejada: ")
+    if choice in ['1', '2', '3', '4']:
+      num1 = float(input("Digite o primeiro número: "))
+      num2 = float(input("Digite o segundo número: "))
+      try:
+        if choice == '1':
+          result = add(num1, num2)
+        elif choice == '2':
+          result = subtract(num1, num2)
+        elif choice == '3':
+          result = multiply(num1, num2)
+        elif choice == '4':
+          result = divide(num1, num2)
+        else:
+          print("Opção inválida. Digite um número de 1 a 5.")
+          input("Pressione Enter para continuar...")
+        print(f"Resultado: {result}")
+        input("Pressione Enter para continuar...")
+      except ValueError:
+        print("Erro: Entrada inválida. Digite números válidos.")
+        input("Pressione Enter para continuar...")
+    elif choice == '5':
+      print("Finalizando...")
+      break
+
+if __name__ == "__main__":
+  main()
+
+------------------------------------------
+
+def add(x, y):
+  return x + y
+
+def subtract(x, y):
+  return x - y
+
+def multiply(x, y):
+  return x * y
+
+def divide(x, y):
+  return x / y
+
+# import calculator

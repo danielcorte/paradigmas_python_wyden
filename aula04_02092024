@@ -1,0 +1,39 @@
+Verifique as funções disponíveis com os imports: 'os' e 'plattform' para a situação onde o usuário informa um nome de arquivo e seu código:
+
+1. verifica se o arquivo existe
+  def arquivo_existe(nome_arquivo):
+    return os.path.exists(nome_arquivo)
+
+2. verfica se o arquivo não está vazio
+  def arquivo_nao_vazio(nome_arquivo):
+    return os.path.getsize(nome_arquivo) > 0
+
+3. mostra o conteúdo do arquivo
+  def mostrar_conteudo_arquivo(nome_arquivo):
+    with open(nome_arquivo, 'r') as arquivo:
+        conteudo = arquivo.read()
+    return conteudo
+
+4. conta a quantidade de linhas do arquivo
+  def contar_linhas_arquivo(nome_arquivo):
+    with open(nome_arquivo, 'r') as arquivo:
+        linhas = arquivo.readlines()
+    return len(linhas)
+
+
+Utilize como exemplo um arquivo .CSV
+  nome_arquivo = 'exemplo.csv'
+
+if arquivo_existe(nome_arquivo):
+    if arquivo_nao_vazio(nome_arquivo):
+        print(f"Conteúdo do arquivo {nome_arquivo}:")
+        print(mostrar_conteudo_arquivo(nome_arquivo))
+        print(f"Quantidade de linhas: {contar_linhas_arquivo(nome_arquivo)}")
+    else:
+        print(f"O arquivo {nome_arquivo} está vazio.")
+else:
+    print(f"O arquivo {nome_arquivo} não existe.")
+
+'os' é útil para verificar a existência do arquivo e o tamanho.
+'platform' não é realmente necessário para as funções acima, mas pode ser útil se você precisar adaptar o comportamento do código com base no sistema operacional (por exemplo, verificar o tipo de sistema operacional e ajustar o caminho do arquivo).
+Se você precisar usar 'platform' para alguma adaptação específica relacionada ao sistema operacional, por favor, forneça mais detalhes sobre o que você está tentando alcançar.

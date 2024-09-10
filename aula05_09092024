@@ -1,0 +1,50 @@
+Primeiro exercício de orientação a objeto
+
+class Pessoa:
+
+  #metodo construtor --> modelo para instanciar o objeto
+  def __init__(self, nome, idade, comendo=False, falando=False): # --> parametro
+    self.nome = nome
+    self.idade = idade
+    self.comendo = comendo
+    self.falando = falando
+
+  #metodo simples
+  def comer(self, alimento):
+    if self.comendo:
+      print(f'{self.nome} já está comendo.')
+      return
+    print(f'{self.nome} com idade de {self.idade} anos, está comendo {alimento}')
+    self.comendo = True
+
+  #metodo simples
+  def parar_comer(self):
+    if not self.comendo:
+      print(f'{self.nome} não está comendo.')
+      return
+    print(f'{self.nome} parou de comer.')
+    self.comendo = False
+
+  #metodo simples
+  def falar(self, assunto):
+    if self.falando:
+      print(f"{self.nome} já está falando.")
+      return
+    print(f"{self.nome} está falando sobre {assunto}")
+    self.falando = True
+
+  #metodo simples
+  def parar_falar(self):
+    if not self.falando:
+      print(f"{self.nome} não está falando")
+      return
+    print(f"{self.nome} parou de falar")
+    self.falando = False
+
+p1 = Pessoa('João', 20)
+p1.comer('maçã')
+p2 = Pessoa('Maria', 30)
+p2.comer('goiaba')
+p1.parar_comer()
+p2.falar(assunto='Python')
+p2.parar_falar()

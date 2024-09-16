@@ -1,0 +1,175 @@
+--------------------------------------------------------------------------------------------
+1 - Crie uma classe Circulo com um atributo raio e um método area() para calcular a área do círculo.
+from math import pi
+ 
+class Circulo:
+    def __init__(self, raio):
+        self.raio = raio
+ 
+    def area(self):
+        return pi * (self.raio ** 2)
+   
+circulo = Circulo(5)
+print(f"A área do circulo com raio {circulo.raio} é {circulo.area():.2f}")
+ 
+--------------------------------------------------------------------------------------------
+2 - Crie uma classe Retangulo com atributos altura e largura, e um método perimetro() para calcular o perímetro.
+ 
+class Retangulo:
+    def __init__(self, altura, largura):
+        self.altura = altura
+        self.largura = largura
+ 
+    def perimetro(self):
+        return self.altura * self.largura
+   
+perimetro = Retangulo(5, 2)
+print(f"O perímetro de altura {perimetro.altura} e largura {perimetro.largura} é: {perimetro.perimetro():.2f}")
+ 
+--------------------------------------------------------------------------------------------
+3 - Crie uma classe Pessoa com atributos nome e idade, e um método apresentar() que imprime o nome e a idade.
+class Pessoa:
+    def __init__(self, nome='', idade=0):
+        self.nome = nome
+        self.idade = idade
+ 
+    def apresentar(self):
+        self.nome = input("Qual o seu nome: ")
+        self.idade = int(input("Qual a sua idade: "))
+ 
+        return f'Prazer em te conhecer {self.nome}, fico feliz em saber que você tem {self.idade} anos
+   
+pessoa = Pessoa()
+print(pessoa.apresentar())
+ 
+--------------------------------------------------------------------------------------------
+4 - Crie uma classe Livro com atributos titulo e autor, e um método resumo() que imprime ambos. '''
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+ 
+    def resumo(self):
+        print("-----------------------\n",
+              "Autor:", self.autor,
+              "\n Titulo:", self.titulo,
+              "\n-----------------------")
+livro = Livro(titulo="Can't hurt me", autor='David Goggins')
+print(livro.resumo())
+ 
+--------------------------------------------------------------------------------------------
+5 - Crie uma classe Carro com um atributo velocidade e métodos para acelerar() e frear().
+O método acelerar aumenta em 10 a velocidade e o método frear diminuiu em 10. A velocidade não pode ser < 0. 
+ 
+class Carro:
+    def __init__(self, velocidade=0, vari=0):
+        self.velocidade = velocidade
+        self.vari = vari
+ 
+    def acelerar(self):
+            print(f'--------------------------------\n',' O carro acelerou:', self.velocidade + self.vari,'Km/h', '\n--------------------------------')
+ 
+    def frear(self):
+            print(f'--------------------------------\n',' O carro freou:', self.velocidade - self.vari,'Km/h', '\n--------------------------------')
+ 
+escolha = int(input("Você deseja acelerar ou frear o carro?: \n", "--------------------------------\n", "[1] - Acelerar\n", "[2] - Frear"))
+inicial = float(input("Qual a velocidade inicial do carro?: "))
+km = float(input("Em quantos km você deseja {escolha} do carro?: "))
+ 
+if escolha == 1:
+    carro = Carro(velocidade=inicial)
+    print(carro.acelerar())
+ 
+elif escolha == 2:
+    carro = Carro(velocidade=inicial)
+    print(carro.acelerar())
+ 
+--------------------------------------------------------------------------------------------
+6 - Crie uma classe Caneta com atributos cor e marca, e um método escrever() que imprime uma mensagem com a cor e a marca.
+ 
+class Caneta:
+  def __init__(self, cor, marca):
+    self.cor = cor
+    self.marca = marca
+ 
+  def escrever(self):
+    print(f"A caneta {self.cor} da marca {self.marca} está escrevendo.")
+ 
+caneta1 = Caneta("Azul", "Bic")
+caneta1.escrever()"""
+ 
+--------------------------------------------------------------------------------------------
+7 - Crie uma classe Calculadora com métodos para somar(), subtrair(), multiplicar() e dividir() dois números. (Não precisa ter atributos)
+ 
+class Calculadora:
+  def __init__(self):
+    pass
+ 
+  def somar(self, num1, num2):
+    return num1 + num2
+ 
+  def subtrair(self, num1, num2):
+    return num1 - num2
+ 
+  def multiplicar(self, num1, num2):
+    return num1 * num2
+ 
+  def dividir(self, num1, num2):
+    return num1 / num2
+ 
+calc1 = Calculadora()
+print(calc1.dividir(10, 5))
+ 
+--------------------------------------------------------------------------------------------
+8 - Crie uma classe Estudante com atributos nome e nota, e um método aprovado() que verifica se a nota é maior ou igual a 7 e retorna um booleano. Imprima ao final: “Aprovado: True” (se for maior ou igual a 7).
+ 
+class Estudante:
+  def __init__(self, nome, nota):
+    self.nome = nome
+    self.nota = nota
+ 
+  def aprovado(self):
+    if self.nota >= 7:
+      return True
+    else:
+      return False
+ 
+estudante1 = Estudante("João", 5)
+print("Aprovado: ", estudante1.aprovado())
+ 
+--------------------------------------------------------------------------------------------
+9 - Crie uma classe ContaBancaria com atributos saldo e métodos para depositar() e sacar() dinheiro. No método depositar adicione ao saldo o valor passado para a classe e no método sacar retire o valor informado do saldo. Se não houver saldo para sacar informe “Saldo insuficiente”.
+ 
+class ContaBancaria:
+  def __init__(self, saldo):
+    self.saldo = saldo
+ 
+  def depositar(self, valor):
+    self.saldo += valor
+ 
+  def sacar(self, valor):
+    if valor <= self.saldo:
+      self.saldo -= valor
+    else:
+      print("Saldo insuficiente.")
+ 
+conta1 = ContaBancaria(100)
+conta1.depositar(50)
+conta1.sacar(150)
+print("Novo saldo: R$", conta1.saldo)
+ 
+--------------------------------------------------------------------------------------------
+10 - Crie uma classe Relogio com um método mostrar_hora() que imprime a hora atual. Será necessário importar uma biblioteca de tempo.
+ 
+import time
+ 
+class Relogio:
+  def __init__(self):
+    pass
+ 
+  def mostrar_hora(self):
+    hora_atual = time.strftime("%H:%M:%S")
+    print("Hora atual: ", hora_atual)
+ 
+relogio1 = Relogio()
+relogio1.mostrar_hora()
